@@ -1,5 +1,18 @@
 import type { Metadata } from 'next';
+import { Big_Shoulders, Saira } from 'next/font/google';
 import './globals.css';
+
+const saira = Saira({
+  subsets: ['latin', 'vietnamese'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-saira',
+});
+
+const bigShouldersDisplay = Big_Shoulders({
+  subsets: ['latin', 'vietnamese'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-big-shoulders-display',
+});
 
 export const metadata: Metadata = {
   title: {
@@ -17,7 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi">
-      <body className="min-h-dvh bg-white text-zinc-900 antialiased">
+      <body
+        className={`${saira.variable} ${bigShouldersDisplay.variable} min-h-dvh bg-white text-zinc-900 antialiased`}
+      >
         {children}
       </body>
     </html>

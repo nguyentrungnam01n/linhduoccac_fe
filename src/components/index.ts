@@ -1,3 +1,4 @@
+export * from './AutoScroll';
 export * from './Breadcrumb';
 export * from './ContentCard';
 export * from './Disclaimer';
