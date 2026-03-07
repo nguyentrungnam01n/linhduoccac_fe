@@ -9,7 +9,6 @@ export const metadata: Metadata = {
 export default function AdminNewContentPage() {
   return (
     <div className="space-y-4">
-      <h1 className="text-xl font-semibold">Tạo nội dung</h1>
       <NewContentForm />
     </div>
   );

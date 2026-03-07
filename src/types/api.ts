@@ -8,12 +8,15 @@ export type ContentSummary = {
   slug: string;
   title: string;
   excerpt?: string | null;
-  cover?: string | null;
-  ogImage?: string | null;
+  coverImageId?: string | null;
+  cover?: string | null; // deprecated
+  ogImageId?: string | null;
+  ogImage?: string | null; // deprecated
   publishStatus: PublishStatus;
   publishedAt?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
+  authorId?: string | null;
 };
 
 export type ContentDetail = ContentSummary & {
@@ -66,8 +69,11 @@ export type AdminContentCreateInput = {
   html?: string;
   metaTitle?: string;
   metaDescription?: string;
-  cover?: string;
-  ogImage?: string;
+  coverImageId?: string | null;
+  coverAlt?: string;
+  publishedAt?: string | null;
+  createdById?: string | null;
+  ogImageId?: string | null;
   excerpt?: string;
   disclaimerEnabled?: boolean;
   disclaimerText?: string;
@@ -92,3 +98,18 @@ export type AdminLeadListResponse = PaginatedResponse<AdminLead>;
 
 export type AdminSettingsResponse = SettingsDto;
 export type AdminSettingsUpdateInput = SettingsDto;
+
+export type AdminMeResponse = {
+  id: string;
+  email: string;
+  role: string;
+};
+
+export type Category = {
+  id: string;
+  name: string;
+  slug: string;
+  scope?: string | null;
+  contentsCount: number;
+  color?: string | null;
+};

@@ -130,6 +130,7 @@ export function mockContentDetail(
 export function mockAdminContentsList(params: {
   type?: ContentType;
   status?: PublishStatus;
+  q?: string;
   page?: number;
   pageSize?: number;
 }): AdminContentListResponse {
@@ -137,13 +138,14 @@ export function mockAdminContentsList(params: {
   const pageSize = Math.max(1, Math.min(50, params.pageSize ?? 20));
   const type = params.type ?? 'POST';
   const status = params.status ?? 'PUBLISHED';
+  const q = params.q;
 
   const start = (page - 1) * pageSize;
   const items: ContentSummary[] = Array.from({ length: pageSize }).map((_, i) =>
     makeSummary({
       idx: start + i + 1,
       type,
-      titlePrefix: 'Admin content',
+      titlePrefix: q ? `Search "${q}"` : 'Admin content',
       publishStatus: status,
     }),
   );
