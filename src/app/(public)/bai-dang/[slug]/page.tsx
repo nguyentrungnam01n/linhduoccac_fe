@@ -152,7 +152,7 @@ export default async function PostDetailPage({
           priority
         />
       </div>
-      <article className="relative w-full min-h-screen overflow-hidden bg-[#4D0000]/90 flex flex-col items-center pb-20">
+      <article className="relative w-full min-h-screen overflow-hidden bg-[#4D0000]/90 flex flex-col items-center">
         <Image
           src={backgroundImage}
           alt=""
@@ -168,16 +168,7 @@ export default async function PostDetailPage({
         />
 
         {/* Content Box */}
-        <div
-          className="relative z-10 box-border flex flex-col items-center"
-          style={{
-            width: '1167px',
-            marginTop: '224px',
-            paddingTop: '118px',
-            paddingBottom: '118px',
-            gap: '32px',
-          }}
-        >
+        <div className="relative z-10 box-border flex flex-col items-center w-[90%] md:w-[1167px] mt-10 md:mt-[224px] pt-10 pb-10 md:pt-[118px] md:pb-[118px] px-4 md:px-0 gap-6 md:gap-[32px]">
           <Image
             src={contentBox}
             alt="Content Box"
@@ -185,25 +176,15 @@ export default async function PostDetailPage({
             className="object-fill -z-10"
           />
 
-          <div
-            style={{
-              width: '955px',
-              marginBottom: '20px',
-            }}
-          >
+          <div className="w-full md:w-[955px] md:mb-[20px]">
             <Breadcrumb items={crumbs} />
           </div>
 
           {/* Title */}
           <div
-            className={`flex items-center justify-center uppercase text-[#BA0B00]`}
+            className={`flex items-center justify-center uppercase text-[#BA0B00] w-full md:w-[955px] text-[24px] md:text-[60.7788px] leading-tight md:leading-[73px] text-center font-semibold`}
             style={{
-              width: '955px',
               fontFamily: 'var(--font-big-shoulders-display)',
-              fontSize: '60.7788px',
-              fontWeight: 600,
-              lineHeight: '73px',
-              textAlign: 'center',
               letterSpacing: '-0.03em',
               flexShrink: 0,
             }}
@@ -212,17 +193,17 @@ export default async function PostDetailPage({
           </div>
 
           {/* Metadata */}
-          <div className="flex items-center justify-center gap-6">
+          <div className="flex items-center justify-center gap-3 md:gap-6 flex-wrap">
             <div className="flex items-center gap-2">
               <span
-                className={`text-[#760000] ${beVietnamPro.className} text-[14px]`}
+                className={`text-[#760000] ${beVietnamPro.className} text-[12px] md:text-[14px]`}
               >
                 Chuyên mục:
               </span>
               <div className="relative">
                 <div className="bg-[#E75739] rounded-[10px] px-3 py-1">
                   <span
-                    className={`${beVietnamPro.className} text-[12px] font-bold`}
+                    className={`${beVietnamPro.className} text-[11px] md:text-[12px] font-bold`}
                     style={{ color: getCategoryColor(0) }}
                   >
                     {displayPost.category?.name || 'Sức khỏe'}
@@ -230,22 +211,18 @@ export default async function PostDetailPage({
                 </div>
               </div>
             </div>
-
             <div className="w-[1px] h-[20px] bg-[#4D0000]/90"></div>
-
             <div
-              className={`text-[#760000] ${beVietnamPro.className} text-[14px]`}
+              className={`text-[#760000] ${beVietnamPro.className} text-[12px] md:text-[14px]`}
             >
               Ngày đăng:{' '}
               {displayPost.publishedAt
                 ? new Date(displayPost.publishedAt).toLocaleDateString('vi-VN')
                 : ''}
             </div>
-
             <div className="w-[1px] h-[20px] bg-[#4D0000]/90"></div>
-
             <div
-              className={`text-[#760000] ${beVietnamPro.className} text-[14px]`}
+              className={`text-[#760000] ${beVietnamPro.className} text-[12px] md:text-[14px]`}
             >
               Tác giả: {displayPost.authorName || 'Dược Linh Các'}
             </div>
@@ -253,7 +230,7 @@ export default async function PostDetailPage({
 
           {/* Body Content */}
           <div
-            className={`w-[1029px] text-[#690F0C] ${beVietnamPro.className}`}
+            className={`w-full md:w-[1029px] text-[#690F0C] ${beVietnamPro.className}`}
           >
             <RichText html={content.html} />
           </div>
@@ -261,39 +238,94 @@ export default async function PostDetailPage({
 
         {/* Related Posts */}
         {relatedPosts.length > 0 && (
-          <div
-            className="relative z-10 flex flex-col"
-            style={{
-              width: '1167px',
-              marginTop: '120px',
-              gap: '30px',
-              paddingBottom: '100px',
-            }}
-          >
+          <div className="relative z-10 flex flex-col w-full md:w-[1167px] mt-10 md:mt-[120px] gap-[30px] pb-[100px] px-4 md:px-0">
             <div
+              className="text-[28px] md:text-[40px] font-extrabold uppercase leading-tight md:leading-[48px] text-left pl-[10px]"
               style={{
                 fontFamily: 'var(--font-big-shoulders-display)',
-                fontWeight: 800,
-                fontSize: '40px',
-                lineHeight: '48px',
                 color: '#FFE7B6',
-                textTransform: 'uppercase',
-                textAlign: 'left',
-                paddingLeft: '10px',
               }}
             >
               CÁC BÀI VIẾT LIÊN QUAN
             </div>
 
-            <div className="flex justify-between">
+            {/* Mobile: 1 column */}
+            <div className="flex flex-col gap-6 md:hidden">
+              {relatedPosts.map((post) => (
+                <div
+                  key={post.id}
+                  className="relative w-full bg-[#F8FEDC] rounded-lg border border-[#760000]/20 shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-1"
+                >
+                  <Link
+                    href={`/bai-dang/${post.slug}`}
+                    className="relative block w-full aspect-[3/2] overflow-hidden"
+                  >
+                    {post.coverImage?.url ? (
+                      <Image
+                        src={post.coverImage.url}
+                        alt={post.title}
+                        fill
+                        className="object-cover"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 bg-stone-200 flex items-center justify-center text-stone-400 text-sm">
+                        No Image
+                      </div>
+                    )}
+                  </Link>
+                  <div
+                    className={`p-4 flex flex-col gap-2 ${beVietnamPro.className}`}
+                  >
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="text-[12px] text-[#760000]">
+                        Chuyên mục:
+                      </span>
+                      <span
+                        className="px-2 py-0.5 rounded-full bg-[#E75739] text-[10px]"
+                        style={{ color: '#FFF9A7' }}
+                      >
+                        {post.category?.name || 'Chung'}
+                      </span>
+                    </div>
+                    <Link
+                      href={`/bai-dang/${post.slug}`}
+                      className="text-[14px] font-black uppercase text-[#760000] leading-tight line-clamp-2 hover:underline"
+                    >
+                      {post.title}
+                    </Link>
+                    <p className="text-[12px] text-[#760000] leading-snug line-clamp-3">
+                      {post.excerpt || '...'}
+                    </p>
+                    <div className="flex flex-wrap items-center gap-1.5 text-[11px] text-[#760000]">
+                      <span>
+                        Ngày đăng:{' '}
+                        {post.publishedAt
+                          ? new Date(post.publishedAt).toLocaleDateString(
+                              'vi-VN',
+                            )
+                          : ''}
+                      </span>
+                      <span>|</span>
+                      <span>Tác giả: {post.authorName}</span>
+                    </div>
+                    <Link
+                      href={`/bai-dang/${post.slug}`}
+                      className="text-[12px] font-bold italic underline text-[#760000]"
+                    >
+                      Đọc thêm
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Desktop: flex row */}
+            <div className="hidden md:flex justify-between">
               {relatedPosts.map((post) => (
                 <div
                   key={post.id}
                   className="relative transition-transform duration-300 hover:-translate-y-2"
-                  style={{
-                    width: '323px',
-                    height: '406.4px',
-                  }}
+                  style={{ width: '323px', height: '406.4px' }}
                 >
                   <Image
                     src={smallBox}
@@ -322,7 +354,6 @@ export default async function PostDetailPage({
                       <div className="w-full h-full bg-stone-200" />
                     )}
                   </Link>
-
                   <div
                     className={`flex items-center text-[#760000] ${beVietnamPro.className}`}
                     style={{
@@ -337,7 +368,6 @@ export default async function PostDetailPage({
                   >
                     Chuyên mục:
                   </div>
-
                   <div
                     className="absolute bg-[#E75739]"
                     style={{
@@ -348,7 +378,6 @@ export default async function PostDetailPage({
                       borderRadius: '7.81546px',
                     }}
                   />
-
                   <div
                     className={`flex items-center text-[#FFF9A7] ${beVietnamPro.className}`}
                     style={{
@@ -363,7 +392,6 @@ export default async function PostDetailPage({
                   >
                     {post.category?.name || 'Chung'}
                   </div>
-
                   <Link
                     href={`/bai-dang/${post.slug}`}
                     className={`flex items-center uppercase text-[#760000] cursor-pointer ${beVietnamPro.className}`}
@@ -380,7 +408,6 @@ export default async function PostDetailPage({
                   >
                     <span className="line-clamp-2">{post.title}</span>
                   </Link>
-
                   <div
                     className={`flex items-center text-[#760000] ${beVietnamPro.className}`}
                     style={{
@@ -397,7 +424,6 @@ export default async function PostDetailPage({
                       {post.excerpt || '...'}
                     </span>
                   </div>
-
                   <div
                     className={`flex items-center text-[#760000] ${beVietnamPro.className}`}
                     style={{
@@ -415,7 +441,6 @@ export default async function PostDetailPage({
                       ? new Date(post.publishedAt).toLocaleDateString('vi-VN')
                       : ''}
                   </div>
-
                   <div
                     className={`flex items-center text-[#760000] ${beVietnamPro.className}`}
                     style={{
@@ -431,7 +456,6 @@ export default async function PostDetailPage({
                   >
                     |
                   </div>
-
                   <div
                     className={`flex items-center text-[#760000] ${beVietnamPro.className}`}
                     style={{
@@ -446,7 +470,6 @@ export default async function PostDetailPage({
                   >
                     Tác giả: {post.authorName}
                   </div>
-
                   <Link
                     href={`/bai-dang/${post.slug}`}
                     className={`flex items-center text-[#760000] italic underline ${beVietnamPro.className}`}

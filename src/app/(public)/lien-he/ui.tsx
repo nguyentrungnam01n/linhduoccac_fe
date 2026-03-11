@@ -159,7 +159,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={submitting}
-          className={`h-[35px] w-[153px] rounded-[4px] bg-[#BF351C] text-sm font-medium text-white disabled:opacity-60 ${beVietnamPro.className}`}
+          className={`h-[42px] md:h-[35px] w-full md:w-[153px] rounded-[4px] bg-[#BF351C] text-sm font-medium text-white disabled:opacity-60 ${beVietnamPro.className}`}
         >
           {submitting ? 'Đang gửi...' : 'Gửi liên hệ'}
         </button>

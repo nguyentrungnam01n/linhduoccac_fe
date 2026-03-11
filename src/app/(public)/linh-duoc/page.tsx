@@ -258,7 +258,7 @@ export default function HerbListPage() {
                 priority
               />
               <h2
-                className={`${bigShouldersDisplay.className} text-center uppercase font-semibold text-[#FDE3B1] leading-[1.2] tracking-[-0.03em] absolute top-[15%] left-1/2 -translate-x-1/2 md:w-[191px] md:h-[70px] md:left-[173px] md:top-[95px] md:translate-x-0`}
+                className={`${bigShouldersDisplay.className} text-center uppercase font-semibold text-[#FDE3B1] leading-[1.2] tracking-[-0.03em] absolute top-[13%] left-1/2 -translate-x-1/2 md:w-[201px] md:h-[70px] md:left-[173px] md:top-[95px] md:translate-x-0`}
               >
                 <span className="text-[20px] pt-10 md:text-[58.72px]">
                   THUỐC NAM
@@ -306,7 +306,7 @@ export default function HerbListPage() {
                 priority
               />
               <h2
-                className={`${bigShouldersDisplay.className} text-center uppercase font-semibold text-[#FDE3B1] leading-[1.2] tracking-[-0.03em] absolute top-[15%] left-1/2 -translate-x-1/2 md:w-[175px] md:h-[70px] md:left-[181px] md:top-[96px] md:translate-x-0`}
+                className={`${bigShouldersDisplay.className} text-center uppercase font-semibold text-[#FDE3B1] leading-[1.2] tracking-[-0.03em] absolute top-[12%] left-1/2 -translate-x-1/2 md:w-[201px] md:h-[70px] md:left-[173px] md:top-[95px] md:translate-x-0`}
               >
                 <span className="text-[20px] md:text-[58.72px]">THUỐC BẮC</span>
               </h2>
