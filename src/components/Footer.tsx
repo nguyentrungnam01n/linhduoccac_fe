@@ -45,50 +45,57 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Cột 2: Về Chúng Tôi */}
-          <div className="flex flex-col items-center text-center lg:col-span-3 lg:items-start lg:text-left lg:pl-10">
-            <h3 className="text-[18px] font-bold leading-[20px]">
-              DƯỢC LINH CÁC
-            </h3>
-            <div className="mt-4 space-y-3 text-[16px] leading-[21px] lg:mt-7">
-              <Link href="/gioi-thieu" className="block hover:underline">
-                VỀ CHÚNG TÔI - HỘI DUYÊN
-              </Link>
-              <Link href="/hoi-duyen" className="block hover:underline">
-                HỘI DUYÊN
-              </Link>
-              <Link href="/chung-benh" className="block hover:underline">
-                CÁC CHỨNG - BỆNH
-              </Link>
-              <Link href="/bai-dang" className="block hover:underline">
-                BÀI ĐĂNG
-              </Link>
+          {/* Cột 2 & 3: Về Chúng Tôi & Dịch Vụ - Song song trên Mobile */}
+          <div className="col-span-1 grid grid-cols-2 gap-4 lg:col-span-5 lg:gap-8 ml-8">
+            {/* Cột 2: Về Chúng Tôi */}
+            <div className="flex flex-col items-center text-left lg:items-start lg:text-left lg:pl-10">
+              <h3 className="text-[14px] font-bold leading-[18px] lg:text-[18px] lg:leading-[20px]">
+                DƯỢC LINH CÁC
+              </h3>
+              <div className="mt-4 space-y-2 text-[12px] leading-[18px] lg:mt-7 lg:space-y-3 lg:text-[16px] lg:leading-[21px]">
+                <Link href="/gioi-thieu" className="block hover:underline">
+                  VỀ CHÚNG TÔI
+                </Link>
+                <Link href="/hoi-duyen" className="block hover:underline">
+                  HỘI DUYÊN
+                </Link>
+                <Link href="/chung-benh" className="block hover:underline">
+                  CÁC CHỨNG - BỆNH
+                </Link>
+                <Link href="/bai-dang" className="block hover:underline">
+                  BÀI ĐĂNG
+                </Link>
+              </div>
             </div>
-          </div>
 
-          {/* Cột 3: Dịch Vụ */}
-          <div className="flex flex-col items-center text-center lg:col-span-2 lg:items-start lg:text-left">
-            <h3 className="text-[18px] font-bold leading-[20px]">DỊCH VỤ</h3>
-            <div className="mt-4 space-y-3 text-[16px] leading-[21px] lg:mt-7">
-              <Link href="/dich-vu" className="block hover:underline">
-                Y TRÀ DƯỠNG SINH
-              </Link>
-              <Link href="/lien-he" className="block hover:underline">
-                LIÊN HỆ
-              </Link>
-              <Link href="/dich-vu" className="block hover:underline">
-                KHÁM BỆNH
-              </Link>
-              <Link href="/linh-duoc" className="block hover:underline">
-                LINH DƯỢC
-              </Link>
+            {/* Cột 3: Dịch Vụ */}
+            <div className="flex flex-col item-center text-left lg:items-start lg:text-left">
+              <h3 className="text-[14px] font-bold leading-[18px] lg:text-[18px] lg:leading-[20px]">
+                DỊCH VỤ
+              </h3>
+              <div className="mt-4 space-y-2 text-[12px] leading-[18px] lg:mt-7 lg:space-y-3 lg:text-[16px] lg:leading-[21px]">
+                <Link href="/dich-vu" className="block hover:underline">
+                  Y TRÀ DƯỠNG SINH
+                </Link>
+                <Link href="/lien-he" className="block hover:underline">
+                  LIÊN HỆ
+                </Link>
+                <Link href="/dich-vu" className="block hover:underline">
+                  KHÁM BỆNH
+                </Link>
+                <Link href="/linh-duoc" className="block hover:underline">
+                  LINH DƯỢC
+                </Link>
+              </div>
             </div>
           </div>
 
           {/* Cột 4: Liên Hệ - Chiếm rộng nhất */}
           <div className="flex flex-col items-center text-center lg:col-span-4 lg:items-start lg:text-left">
-            <h3 className="text-[18px] font-bold leading-[20px]">LIÊN HỆ</h3>
-            <div className="mt-4 space-y-3 text-[15px] font-medium leading-[20px] lg:mt-7">
+            <h3 className="text-[14px] font-bold leading-[18px] lg:text-[18px] lg:leading-[20px]">
+              LIÊN HỆ
+            </h3>
+            <div className="mt-4 space-y-2 text-[12px] font-medium leading-[18px] lg:mt-7 lg:space-y-3 lg:text-[15px] lg:leading-[20px]">
               <p className="uppercase">Tư vấn: 0366659999</p>
               <p>EMAIL: duoclinhcac@gmail.com</p>
               <p>ĐỊA CHỈ:</p>
