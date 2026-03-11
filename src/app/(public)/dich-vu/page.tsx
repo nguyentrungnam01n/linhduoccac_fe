@@ -108,7 +108,7 @@ export default function ServiceListPage() {
 
             <div className="flex flex-col md:block w-full items-center gap-6 md:gap-0">
               {/* Image */}
-              <div className="relative md:absolute md:top-[540px] w-full max-w-[443px] aspect-[443/571] md:left-1/2 md:-translate-x-[519px]">
+              <div className="relative md:absolute md:top-[540px] w-[60%] max-w-[443px] aspect-[443/571] md:left-1/2 md:-translate-x-[519px]">
                 <Image
                   src={dvuPattern1}
                   alt="Dvu Pattern 1"
@@ -169,7 +169,7 @@ export default function ServiceListPage() {
 
             <div className="flex flex-col md:block w-full items-center gap-6 md:gap-0">
               {/* Image (Mobile Order 2) */}
-              <div className="relative md:absolute md:top-[1365px] w-full max-w-[443px] aspect-[443/481] md:left-1/2 md:translate-x-[74px] md:order-none">
+              <div className="relative md:absolute md:top-[1365px] w-[60%] max-w-[443px] aspect-[443/481] md:left-1/2 md:translate-x-[74px] md:order-none">
                 <Image
                   src={dvuPattern2}
                   alt="Dvu Pattern 2"
@@ -230,7 +230,7 @@ export default function ServiceListPage() {
 
             <div className="flex flex-col md:block w-full items-center gap-6 md:gap-0">
               {/* Image */}
-              <div className="relative md:absolute md:top-[2092px] w-full max-w-[443px] aspect-[443/566] md:left-1/2 md:-translate-x-[516px]">
+              <div className="relative md:absolute md:top-[2092px] w-[60%] max-w-[443px] aspect-[443/566] md:left-1/2 md:-translate-x-[516px]">
                 <Image
                   src={dvuPattern3}
                   alt="Dvu Pattern 3"
@@ -291,7 +291,7 @@ export default function ServiceListPage() {
 
             <div className="flex flex-col md:block w-full items-center gap-6 md:gap-0">
               {/* Image (Mobile Order 2) */}
-              <div className="relative md:absolute md:top-[2869px] w-full max-w-[443px] aspect-[443/481] md:left-1/2 md:translate-x-[74px] md:order-none">
+              <div className="relative md:absolute md:top-[2869px] w-[60%] max-w-[443px] aspect-[443/481] md:left-1/2 md:translate-x-[74px] md:order-none">
                 <Image
                   src={dvuPattern4}
                   alt="Dvu Pattern 4"
