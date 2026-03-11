@@ -81,7 +81,7 @@ export function ContentsPage() {
   const categoryId = sp.get('categoryId') ?? '';
   const status = (sp.get('status') as PublishStatus | null) ?? '';
   const page = parseInt(sp.get('page') ?? '1', 10);
-  const pageSize = parseInt(sp.get('pageSize') ?? '20', 10);
+  const pageSize = parseInt(sp.get('pageSize') ?? '5', 10);
   const search = sp.get('q') ?? '';
 
   useEffect(() => {

@@ -110,6 +110,8 @@ export function LeadsPage() {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [selectedLead, setSelectedLead] = useState<AdminLead | null>(null);
+  const [page, setPage] = useState(1);
+  const pageSize = 5;
 
   useEffect(() => {
     let cancelled = false;
@@ -117,7 +119,7 @@ export function LeadsPage() {
     setError(null);
 
     adminApi
-      .listLeads('?page=1&pageSize=50')
+      .listLeads(`?page=${page}&pageSize=${pageSize}`)
       .then((res) => {
         if (!cancelled) setData(res);
       })
@@ -131,7 +133,7 @@ export function LeadsPage() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [page]);
 
   return (
     <div className="space-y-6">
@@ -265,13 +267,36 @@ export function LeadsPage() {
         )}
 
         {data && (
-          <div className="border-t border-stone-100 bg-stone-50 px-6 py-3 text-xs text-stone-500 flex justify-between">
-            <span>
-              Tổng số leads: <strong>{data.total}</strong>
+          <div className="flex items-center justify-between border-t border-stone-100 bg-stone-50 px-6 py-4">
+            <span className="text-sm text-stone-600">
+              Hiển thị{' '}
+              <span className="font-medium">
+                {data.items.length === 0 ? 0 : (page - 1) * pageSize + 1}
+              </span>{' '}
+              đến{' '}
+              <span className="font-medium">
+                {data.items.length === 0
+                  ? 0
+                  : (page - 1) * pageSize + data.items.length}
+              </span>{' '}
+              trong số <span className="font-medium">{data.total}</span> kết quả
             </span>
-            <span>
-              Trang: {data.page} / {Math.ceil(data.total / data.pageSize)}
-            </span>
+            <div className="flex items-center gap-2">
+              <button
+                disabled={page <= 1}
+                onClick={() => setPage((p) => p - 1)}
+                className="rounded border border-stone-300 bg-white px-3 py-1 text-sm text-stone-600 hover:bg-stone-50 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                Trước
+              </button>
+              <button
+                disabled={page * pageSize >= data.total}
+                onClick={() => setPage((p) => p + 1)}
+                className="rounded border border-stone-300 bg-white px-3 py-1 text-sm text-stone-600 hover:bg-stone-50 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                Sau
+              </button>
+            </div>
           </div>
         )}
       </div>
