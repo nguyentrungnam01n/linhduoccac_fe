@@ -13,7 +13,7 @@ type RevealProps = {
 
 export const Reveal = ({
   children,
-  width = 'w-fit',
+  width,
   className = '',
   delay = 0,
   dir = 'up',

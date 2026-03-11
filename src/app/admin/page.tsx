@@ -66,7 +66,7 @@ export default function AdminHomePage() {
       </div>
 
       {/* Recent Activity Section (Placeholder) */}
-      <div className="rounded-xl border border-[#E75739]/20 bg-white p-6 shadow-sm">
+      {/* <div className="rounded-xl border border-[#E75739]/20 bg-white p-6 shadow-sm">
         <h2 className="text-lg font-bold text-[#4D0000] mb-4">
           Hoạt động gần đây
         </h2>
@@ -89,7 +89,7 @@ export default function AdminHomePage() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
